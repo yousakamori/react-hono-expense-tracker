@@ -1,16 +1,33 @@
-import { useState } from "react";
-import { Button } from "./components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [totalSpent, setTotalSpent] = useState(0);
+
+  useEffect(() => {
+    async function fetchTotal() {
+      const res = await fetch("/api/expenses/total-spent");
+      const data = await res.json();
+      setTotalSpent(data.total);
+    }
+
+    fetchTotal();
+  }, []);
 
   return (
-    <main className="bg-background">
-      <h1>Vite + React</h1>
-      <Button onClick={() => setCount((count) => count + 1)}>up</Button>
-      <Button onClick={() => setCount((count) => count - 1)}>down</Button>
-      <p className="text-red-500">count is {count}</p>
-    </main>
+    <Card className="w-[350px] m-auto">
+      <CardHeader>
+        <CardTitle>Total Spent</CardTitle>
+        <CardDescription>The total amount you've spent</CardDescription>
+      </CardHeader>
+      <CardContent>{totalSpent}</CardContent>
+    </Card>
   );
 }
 
