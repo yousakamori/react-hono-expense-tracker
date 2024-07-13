@@ -1,16 +1,14 @@
 import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-import "./App.css";
+import { Button } from "./components/ui/button";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <main className="card">
+    <main className="bg-background">
       <h1>Vite + React</h1>
-      <button onClick={() => setCount((count) => count + 1)}>up</button>
-      <button onClick={() => setCount((count) => count - 1)}>down</button>
+      <Button onClick={() => setCount((count) => count + 1)}>up</Button>
+      <Button onClick={() => setCount((count) => count - 1)}>down</Button>
       <p className="text-red-500">count is {count}</p>
     </main>
   );
