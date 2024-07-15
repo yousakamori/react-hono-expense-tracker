@@ -1,3 +1,9 @@
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/")({
+  component: Index,
+});
+
 import {
   Card,
   CardContent,
@@ -17,7 +23,7 @@ async function getTotalSpent() {
   return data;
 }
 
-function App() {
+function Index() {
   const { isPending, error, data } = useQuery({
     queryKey: ["get-total-spent"],
     queryFn: getTotalSpent,
@@ -37,5 +43,3 @@ function App() {
     </Card>
   );
 }
-
-export default App;
