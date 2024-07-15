@@ -21,7 +21,7 @@ const fakeExpenses: Expense[] = [
 ];
 
 export const expensesRoute = new Hono()
-  .get("/", (c) => c.json([{ expenses: fakeExpenses }]))
+  .get("/", async (c) => c.json({ expenses: fakeExpenses }))
   .post("/", zValidator("json", createPostSchema), async (c) => {
     const expense = await c.req.valid("json");
     fakeExpenses.push({ ...expense, id: fakeExpenses.length + 1 });
