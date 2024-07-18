@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/table";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export const Route = createFileRoute("/expenses")({
+export const Route = createFileRoute("/_authenticated/expenses")({
   component: Expenses,
 });
 
@@ -34,8 +34,6 @@ function Expenses() {
   if (error) {
     return `An error has occurred: ${error.message}`;
   }
-
-  console.log(data);
 
   return (
     <div className="max-w-3xl p-2 m-auto">

@@ -1,6 +1,15 @@
-import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
+import { QueryClient } from "@tanstack/react-query";
+import {
+  createRootRouteWithContext,
+  Link,
+  Outlet,
+} from "@tanstack/react-router";
 
-export const Route = createRootRoute({
+interface MyRouteContext {
+  queryClient: QueryClient;
+}
+
+export const Route = createRootRouteWithContext<MyRouteContext>()({
   component: Root,
 });
 
