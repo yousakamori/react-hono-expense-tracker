@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { logger } from "hono/logger";
-import { expensesRoute } from "./routes/expesesRoute";
+import { expensesRoute } from "./routes/expenses";
 import { serveStatic } from "hono/bun";
 import { authRoute } from "./routes/auth";
 const app = new Hono();
