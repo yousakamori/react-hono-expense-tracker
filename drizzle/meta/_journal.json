@@ -22,6 +22,13 @@
       "when": 1721441260147,
       "tag": "0002_empty_skin",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1721469836147,
+      "tag": "0003_brainy_scarlet_spider",
+      "breakpoints": true
     }
   ]
 }
