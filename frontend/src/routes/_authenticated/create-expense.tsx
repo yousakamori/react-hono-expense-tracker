@@ -70,6 +70,12 @@ function CreateExpense() {
                 type="number"
                 onChange={(e) => field.handleChange(e.target.value)}
               />
+              <>
+                {field.state.meta.isTouched &&
+                field.state.meta.errors.length ? (
+                  <em>{field.state.meta.errors.join(", ")}</em>
+                ) : null}
+              </>
             </>
           )}
         />
