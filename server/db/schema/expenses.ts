@@ -4,7 +4,7 @@ import {
   serial,
   text,
   timestamp,
-  uniqueIndex,
+  index,
 } from "drizzle-orm/pg-core";
 
 export const expenses = pgTable(
@@ -18,7 +18,7 @@ export const expenses = pgTable(
   },
   (expenses) => {
     return {
-      userIdIndex: uniqueIndex("name_idx").on(expenses.userId),
+      userIdIndex: index("name_idx").on(expenses.userId),
     };
   }
 );
