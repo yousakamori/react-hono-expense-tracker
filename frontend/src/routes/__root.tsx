@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import { QueryClient } from "@tanstack/react-query";
 import {
   createRootRouteWithContext,
@@ -48,6 +49,7 @@ function Root() {
       <div className="max-w-2xl p-2 m-auto">
         <Outlet />
       </div>
+      <Toaster />
     </>
   );
 }

@@ -7,6 +7,7 @@ import { api } from "@/lib/api";
 import { zodValidator } from "@tanstack/zod-form-adapter";
 import { createExpenseSchema } from "@server/sharedTypes";
 import { Calendar } from "@/components/ui/calendar";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/create-expense")({
   component: CreateExpense,
@@ -27,6 +28,10 @@ function CreateExpense() {
         throw new Error("server error");
       }
       navigate({ to: "/expenses" });
+        toast("Expense created", {
+          description: `Successfully created new expense: ${newExpense.id}`,
+        });
+        toast("Error", { description: "Failed to create new expense" });
     },
   });
   return (
