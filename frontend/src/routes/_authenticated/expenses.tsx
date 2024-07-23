@@ -36,8 +36,9 @@ function Expenses() {
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Id</TableHead>
-            <TableHead>title</TableHead>
-            <TableHead>amount</TableHead>
+            <TableHead>Title</TableHead>
+            <TableHead>Amount</TableHead>
+            <TableHead>Date</TableHead>
           </TableRow>
         </TableHeader>
 
